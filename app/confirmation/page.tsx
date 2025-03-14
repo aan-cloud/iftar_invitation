@@ -9,61 +9,40 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Badge } from "@/components/ui/badge"
+import { useEffect, useState } from "react"
 
-// Mock data for attendees
-const mockAttendees = [
-  {
-    id: 1,
-    name: "Ahmed Khan",
-    message: "Looking forward to the event!",
-    address: "123 Main St, City",
-    avatar: "/placeholder.svg?height=40&width=40",
-  },
-  {
-    id: 2,
-    name: "Fatima Ali",
-    message: "I'm vegetarian, please accommodate.",
-    address: "456 Oak Ave, Town",
-    avatar: "/placeholder.svg?height=40&width=40",
-  },
-  {
-    id: 3,
-    name: "Mohammed Rahman",
-    message: null,
-    address: "789 Pine Rd, Village",
-    avatar: "/placeholder.svg?height=40&width=40",
-  },
-  {
-    id: 4,
-    name: "Aisha Patel",
-    message: "I'll bring some dessert to share.",
-    address: "101 Elm St, County",
-    avatar: "/placeholder.svg?height=40&width=40",
-  },
-  {
-    id: 5,
-    name: "Yusuf Omar",
-    message: "Can I bring my family?",
-    address: "202 Maple Dr, District",
-    avatar: "/placeholder.svg?height=40&width=40",
-  },
-]
+type Attendee = {
+  id: string,
+  name: string;
+  address: string;
+  message: string;
+};
 
 export default function ConfirmationPage() {
-  const searchParams = useSearchParams()
+  const searchParams = useSearchParams();
+  const [allAttendees, setAllAttendees] = useState<Attendee[]>([]);
   const name = searchParams.get("name") || "Guest"
 
   // Add the new attendee to the list (in a real app, this would be handled by a database)
-  const allAttendees = [
-    {
-      id: mockAttendees.length + 1,
-      name: name,
-      message: "Just registered!",
-      address: "Address provided",
-      avatar: "/placeholder.svg?height=40&width=40",
-    },
-    ...mockAttendees,
-  ]
+  useEffect(() => {
+    async function getAllAttendees () {
+      try {
+        const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/attend`);
+
+        if (!response) {
+          throw new Error("Failed to fetch data")
+        }
+
+        const result = await response.json();
+
+        setAllAttendees(result)
+      } catch (error) {
+        console.error(error)
+      }
+    }
+
+    getAllAttendees();
+  })
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -85,7 +64,7 @@ export default function ConfirmationPage() {
   }
 
   // Function to get initials from name
-  const getInitials = (name) => {
+  const getInitials = (name: string) => {
     return name
       .split(" ")
       .map((part) => part[0])
@@ -152,7 +131,7 @@ export default function ConfirmationPage() {
                 <CardHeader className="pb-2">
                   <div className="flex items-start gap-4">
                     <Avatar className="h-12 w-12 border-2 border-amber-200 dark:border-amber-700">
-                      <AvatarImage src={attendee.avatar} alt={attendee.name} />
+                      <AvatarImage src={"/placeholder.svg?height=40&width=40"} alt={attendee.name} />
                       <AvatarFallback className="bg-amber-100 text-amber-800 dark:bg-amber-800 dark:text-amber-100">
                         {getInitials(attendee.name)}
                       </AvatarFallback>

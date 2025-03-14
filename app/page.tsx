@@ -37,14 +37,27 @@ export default function Home() {
     },
   })
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    setIsSubmitting(true)
-    // Simulate form submission
-    setTimeout(() => {
-      console.log(values)
+  async function onSubmit(values: z.infer<typeof formSchema>) {
+    try {
+      setIsSubmitting(true);
+
+      await fetch(`${process.env.NEXT_PUBLIC_API_URL}/attend`, {
+        method: "POST",
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          name: values.name,
+          address: values.address,
+          message: values.message
+        })
+      });
+  
       router.push("/confirmation?name=" + encodeURIComponent(values.name))
       setIsSubmitting(false)
-    }, 1000)
+    } catch (error) {
+      console.log(error)
+    }
   }
 
   const containerVariants = {
