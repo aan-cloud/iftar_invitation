@@ -13,6 +13,8 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
+import Link from "next/link"
+import { List } from "lucide-react"
 
 const formSchema = z.object({
   name: z.string().min(2, {
@@ -211,7 +213,10 @@ export default function Home() {
         </div>
 
         <motion.div className="text-center mt-8 text-amber-700 dark:text-amber-300 text-sm" variants={itemVariants}>
-          <p>We look forward to sharing this blessed moment with you.</p>
+          <Button className="bg-amber-600 hover:bg-amber-700">
+            <List />
+            <Link href={"/confirmation"}>Lihat daftar kehadiran </Link>
+          </Button>
         </motion.div>
       </motion.div>
     </div>
