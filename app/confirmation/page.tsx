@@ -92,22 +92,22 @@ export default function ConfirmationPage() {
                   <CheckCircle2Icon className="h-16 w-16 text-green-500" />
                 </motion.div>
               </div>
-              <CardTitle className="text-center text-2xl">Thank You, {name}!</CardTitle>
+              <CardTitle className="text-center text-2xl">Terima Kasih, {name}!</CardTitle>
               <CardDescription className="text-center">
-                Your registration for the Iftar gathering has been received.
+                Pendaftaran mu untuk buka bersama telah kami terima
               </CardDescription>
             </CardHeader>
             <CardContent className="text-center">
-              <p className="mb-4">We look forward to welcoming you on Friday, April 5th at 7:30 PM.</p>
+              <p className="mb-4">Kami menunggu kehadiranmu di hari Senin, 24 Maret 2025 - 7:30 PM.</p>
               <p className="text-sm text-muted-foreground">
-                A confirmation email with all the details has been sent to your registered email address.
+                Email konfirmasi beserta detailnya telah kami kirimkan ke email mu.
               </p>
             </CardContent>
             <CardFooter className="flex justify-center">
               <Button asChild className="bg-amber-600 hover:bg-amber-700 dark:bg-amber-700 dark:hover:bg-amber-600">
                 <Link href="/">
                   <HomeIcon className="mr-2 h-4 w-4" />
-                  Return Home
+                  Kembali ke Halaman Utama
                 </Link>
               </Button>
             </CardFooter>
@@ -117,10 +117,10 @@ export default function ConfirmationPage() {
         <motion.div variants={itemVariants} className="mb-6">
           <div className="flex items-center gap-2 mb-4">
             <Users2Icon className="h-5 w-5 text-amber-600 dark:text-amber-400" />
-            <h2 className="text-2xl font-bold text-amber-800 dark:text-amber-400">Attendees ({allAttendees.length})</h2>
+            <h2 className="text-2xl font-bold text-amber-800 dark:text-amber-400">Daftar Kehadiran ({allAttendees.length})</h2>
           </div>
           <p className="text-amber-700 dark:text-amber-300 mb-4">
-            Here are the people who will be joining the Iftar gathering:
+            Ini lah dia daftar alumni yang akan hadir pada acara buka bersama:
           </p>
         </motion.div>
 

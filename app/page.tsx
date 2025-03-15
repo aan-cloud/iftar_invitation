@@ -85,9 +85,9 @@ export default function Home() {
     <div className="min-h-screen bg-gradient-to-b from-amber-50 to-orange-100 dark:from-slate-900 dark:to-slate-800 flex flex-col items-center justify-center p-4">
       <motion.div className="w-full max-w-4xl mx-auto" variants={containerVariants} initial="hidden" animate="visible">
         <motion.div className="text-center mb-8" variants={itemVariants}>
-          <h1 className="text-4xl md:text-6xl font-bold text-amber-800 dark:text-amber-400 mb-2">Iftar Invitation</h1>
+          <h1 className="text-4xl md:text-6xl font-bold text-amber-800 dark:text-amber-400 mb-2">Undangan Buka Bersama</h1>
           <p className="text-lg md:text-xl text-amber-700 dark:text-amber-300">
-            Join us for a blessed evening of breaking fast together
+          Bergabunglah bersama kami untuk berbuka puasa bersama alumni Bahrul Ulum dalam suasana penuh berkah
           </p>
         </motion.div>
 
@@ -97,9 +97,9 @@ export default function Home() {
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
                   <CalendarIcon className="h-5 w-5 text-amber-600 dark:text-amber-400" />
-                  <span>Event Details</span>
+                  <span>Detail Acara</span>
                 </CardTitle>
-                <CardDescription>Information about our Iftar gathering</CardDescription>
+                <CardDescription>Informasi mengenai acara Iftar kami</CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
                 <div className="flex items-start gap-3">
@@ -107,8 +107,8 @@ export default function Home() {
                     <CalendarIcon className="h-5 w-5 text-amber-600 dark:text-amber-400" />
                   </div>
                   <div>
-                    <h3 className="font-medium">Date & Time</h3>
-                    <p className="text-sm text-muted-foreground">Friday, April 5th, 2024 at Sunset (7:30 PM)</p>
+                    <h3 className="font-medium">Tanggal & Waktu</h3>
+                    <p className="text-sm text-muted-foreground">Minggu, 24 Maret, 2025 (7:30 PM)</p>
                   </div>
                 </div>
 
@@ -118,14 +118,13 @@ export default function Home() {
                   </div>
                   <div>
                     <h3 className="font-medium">Location</h3>
-                    <p className="text-sm text-muted-foreground">Community Center, 123 Main Street</p>
+                    <p className="text-sm text-muted-foreground">Restoran Galaherang, Mempawah</p>
                   </div>
                 </div>
 
                 <div className="mt-6">
                   <p className="text-sm italic">
-                    "O you who have believed, decreed upon you is fasting as it was decreed upon those before you that
-                    you may become righteous." - Quran 2:183
+                    "Wahai orang-orang yang beriman, diwajibkan atas kamu berpuasa sebagaimana diwajibkan atas orang-orang sebelum kamu agar kamu bertakwa." - QS. Al-Baqarah 2:183
                   </p>
                 </div>
               </CardContent>
@@ -137,9 +136,9 @@ export default function Home() {
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
                   <UserIcon className="h-5 w-5 text-amber-600 dark:text-amber-400" />
-                  <span>Register Attendance</span>
+                  <span>Pendaftaran Kehadiran</span>
                 </CardTitle>
-                <CardDescription>Please let us know if you can join us</CardDescription>
+                <CardDescription>Silakan beri tahu kami jika Anda dapat bergabung</CardDescription>
               </CardHeader>
               <CardContent>
                 <Form {...form}>
@@ -149,9 +148,9 @@ export default function Home() {
                       name="name"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel>Name</FormLabel>
+                          <FormLabel>Nama</FormLabel>
                           <FormControl>
-                            <Input placeholder="Your name" {...field} />
+                            <Input placeholder="Nama lengkap kamu" {...field} />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -162,9 +161,9 @@ export default function Home() {
                       name="address"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel>Address</FormLabel>
+                          <FormLabel>Alamat</FormLabel>
                           <FormControl>
-                            <Input placeholder="Your address" {...field} />
+                            <Input placeholder="Alamat tempat tinggal" {...field} />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -175,15 +174,15 @@ export default function Home() {
                       name="message"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel>Message (Optional)</FormLabel>
+                          <FormLabel>Pesan (Optional)</FormLabel>
                           <FormControl>
                             <Textarea
-                              placeholder="Any dietary restrictions or message for the host"
+                              placeholder="Sebutkan jika ada pantangan makanan atau pesan ke Admin"
                               className="resize-none"
                               {...field}
                             />
                           </FormControl>
-                          <FormDescription>Let us know if you have any special requirements</FormDescription>
+                          <FormDescription>Beri tahu kami jika Anda memiliki kebutuhan khusus</FormDescription>
                           <FormMessage />
                         </FormItem>
                       )}
@@ -196,12 +195,12 @@ export default function Home() {
                       {isSubmitting ? (
                         <span className="flex items-center gap-2">
                           <div className="h-4 w-4 animate-spin rounded-full border-2 border-current border-t-transparent" />
-                          Submitting...
+                          Mendaftar...
                         </span>
                       ) : (
                         <span className="flex items-center gap-2">
                           <SendIcon className="h-4 w-4" />
-                          Register
+                          Daftar
                         </span>
                       )}
                     </Button>
