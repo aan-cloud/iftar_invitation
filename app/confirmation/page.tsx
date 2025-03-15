@@ -120,7 +120,7 @@ export default function ConfirmationPage() {
             <h2 className="text-2xl font-bold text-amber-800 dark:text-amber-400">Daftar Kehadiran ({allAttendees.length})</h2>
           </div>
           <p className="text-amber-700 dark:text-amber-300 mb-4">
-            Ini lah dia daftar alumni yang akan hadir pada acara buka bersama:
+            Daftar alumni yang akan hadir pada acara buka bersama:
           </p>
         </motion.div>
 

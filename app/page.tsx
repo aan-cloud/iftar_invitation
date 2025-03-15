@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 import { z } from "zod"
-import { CalendarIcon, MapPinIcon, SendIcon, UserIcon } from "lucide-react"
+import { CalendarIcon, MapPinIcon, SendIcon, UserIcon, CoinsIcon } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
@@ -108,7 +108,7 @@ export default function Home() {
                   </div>
                   <div>
                     <h3 className="font-medium">Tanggal & Waktu</h3>
-                    <p className="text-sm text-muted-foreground">Minggu, 24 Maret, 2025 (7:30 PM)</p>
+                    <p className="text-sm text-muted-foreground">Senin, 24 Maret, 2025 (6:00 PM)</p>
                   </div>
                 </div>
 
@@ -117,8 +117,18 @@ export default function Home() {
                     <MapPinIcon className="h-5 w-5 text-amber-600 dark:text-amber-400" />
                   </div>
                   <div>
-                    <h3 className="font-medium">Location</h3>
+                    <h3 className="font-medium">Lokasi</h3>
                     <p className="text-sm text-muted-foreground">Restoran Galaherang, Mempawah</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-3">
+                  <div className="bg-amber-100 dark:bg-amber-900/30 p-2 rounded-full">
+                    <CoinsIcon className="h-5 w-5 text-amber-600 dark:text-amber-400" />
+                  </div>
+                  <div>
+                    <h3 className="font-medium">Biaya</h3>
+                    <p className="text-sm text-muted-foreground">Rp50.000/Orang</p>
                   </div>
                 </div>
 
