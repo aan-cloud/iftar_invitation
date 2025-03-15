@@ -98,7 +98,7 @@ export default function ConfirmationPage() {
               </CardDescription>
             </CardHeader>
             <CardContent className="text-center">
-              <p className="mb-4">Kami menunggu kehadiranmu di hari Senin, 24 Maret 2025 - 7:30 PM.</p>
+              <p className="mb-4">Kami menunggu kehadiranmu di hari Senin, 24 Maret 2025 - 6:00 PM.</p>
               <p className="text-sm text-muted-foreground">
                 Email konfirmasi beserta detailnya telah kami kirimkan ke email mu.
               </p>
